@@ -140,7 +140,7 @@ public class MongoRecords implements StorageAdapterRecords {
    }
 
    @Override
-   public StorageWriteResult write(List<DataContainer> containers) throws Exception {
+   public StorageWriteResult write(List<DataContainer> containers) throws NullPointerException{
        MongoCollection<Document> collection = MongoStorageAdapter.getCollection(MongoStorageAdapter.collectionEventRecordsName);
 
        // Build an array of documents
@@ -231,7 +231,7 @@ public class MongoRecords implements StorageAdapterRecords {
    }
 
    @Override
-   public CompletableFuture<List<Result>> query(QuerySession session, boolean translate) throws Exception {
+   public CompletableFuture<List<Result>> query(QuerySession session, boolean translate) throws NullPointerException, IllegalAccessException, InstantiationException {
        Query query = session.getQuery();
        checkNotNull(query);
 

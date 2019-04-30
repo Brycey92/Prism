@@ -64,7 +64,7 @@ public class FilterList {
             }
         }
 
-        return mode.equals(FilterMode.BLACKLIST) ? !contains : contains;
+        return mode.equals(FilterMode.BLACKLIST) != contains;
     }
 
     /**
